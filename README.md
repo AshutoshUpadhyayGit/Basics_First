@@ -1,5 +1,1 @@
-# First
-
-Hello guyss
-This is my first GitHub experience. Very much excited and eager to learn and explore and share new things.
-Happy Coding ...
+To build a firm foundation, the repository contains fundamental python routines, playing around with pandas dataframes using various techniques, some SQl codes to work on, and so on.
