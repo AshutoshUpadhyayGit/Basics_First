@@ -1,0 +1,241 @@
+Smallest and largest divisor:
+
+num=int(input("Enter the num: "))
+list=[]
+for i in range(2,num+1):
+    if (num % i) == 0:
+        list.append(i)
+list.sort()
+print("The smallest divisor is :",list[0])
+print("The largest divisor is :",list[len(list)-1])
+
+#######################################################
+Use of Power:
+
+import math
+x=3
+y=4
+print(math.pow(x,y))
+##############################################
+Sum of polynomial
+
+import math
+print("enter the coefficient of form ax^3 + bx^2 + cx^ + d")
+list = []
+for i in range(4):
+    coeff=int(input("enter coeff: "))
+    list.append(coeff)
+sum=0
+m=3
+x=int(input("Enter Value of x: "))
+for j in range(4):
+    sum = sum+ ( list[j] * math.pow(x,m))
+    m=m-1
+print(sum)
+#################################################
+Sum of digits
+
+num = int(input("enter a num: "))
+list = []
+while(num > 0):
+    r=num%10
+    list.append(r)
+    num=num/10
+print(list)
+print(sum(list))
+
+m-2:
+
+n = 157
+
+print(sum(list(map(int,str(n))))) ----- # Explanation is in  last code
+print(list(map(int,str(n))))  :: [1,5,7]
+#################################################
+n=int(input("Enter order of matrix"))
+for i in range(n):
+    for j in range(n):
+        if (i == j):
+            print("1",sep=" ",end=" ")
+        else:
+            print("0",sep=" ",end=" ")
+    print()
+########################################
+l=int(input("Enter lower limit: "))
+h=int(input("Enter higher limit: "))
+for i in range(l,h+1):
+    for j in range(2,i):
+        if (i%j == 0):
+            print(i,"Not a prime number")
+            break
+    else:
+        print(i,"Its a prime no.")
+######################################
+Increment given date:
+
+date=input("Enter the date in format dd/mm/yyyy: ")
+print("Date entered is: ",date)
+dd,mm,yyyy=date.split("/")
+d=int(dd)
+m=int(mm)
+y=int(yyyy)
+max_day=0
+if(m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12):
+    max_day=31
+elif(m == 4 or m == 6 or m == 9 or m == 11):
+    max_day=30
+else:
+    max_day=28
+if(d < 0 or d > max_day or m <= 0 or m > 12 or y <= 0):
+    print("Invalid date")
+elif(d == max_day and m != 12):
+    d=1
+    m=m+1
+    print("The incremented date is : ",d,"/",m,"/",y)
+elif(d == max_day and m == 12):
+    d=1
+    m=1
+    y=y+1
+    print("The incremented date is : ",d,"/",m,"/",y)
+else:
+    d=d+1
+    print("The incremented date is : ",d,"/",m,"/",y)
+##############################################################
+To make table :
+
+n=int(input("Enter the num: "))
+for i in range(1,11):
+    print(n ,"*", i,"=",n*i )
+########################################################
+list = []
+neg = []
+p = []
+o = []
+n=int(input("Enter size of list: "))
+for i in range(n):
+    x=int(input("Enter elements of list: "))
+    list.append(x)
+print(list)
+for i in list:
+    if(i<0):
+        neg.append(i)
+    elif(i > 0 and i%2 == 0):
+        p.append(i)
+    else:
+        o.append(i)
+print("The neg sum: ",sum(neg))
+print("The even sum: ",sum(p))
+print("The odd sum: ",sum(o))
+###################################################
+Count no of times  a element has occured in a list;
+n=int(input("Enter size of list: "))
+list = []
+for i in range(n):
+    ele=int(input("Enter element: "))
+    list.append(ele)
+list.sort()
+x=['a']
+for j in list:
+    count=0
+    if (j == x[len(x)-1]):
+        continue
+    else:
+        for k in range(n):
+            if (j == list[k]):
+                count+=1
+        x.append(j)
+        print(j,"occured", count,"times")
+
+m-2:
+
+l = [2,2,2,6,6,3,3,4,4,4,0,9,13]
+print({i: l.count(i) for i in l})
+######################################################
+Removing duplicates:
+
+n=int(input("Enter size of list: "))
+list = []
+for i in range(n):
+    ele=int(input("Enter element: "))
+    list.append(ele)
+res = [] 
+[res.append(x) for x in list if x not in res]
+    
+print(res)
+
+m-2:
+
+l = [2,2,2,6,6,3,3,4,4,4,0,9,13]
+print(list(set(l)))
+#################################################
+Intersection of 2 lists (Functions Usage:)
+
+def main():
+    l1=[]
+    l2=[]
+    n=int(input("Ente size of list 1: "))
+    m=int(input("Ente size of list 2: "))
+    for i in range(n):
+        x=int(input("Enter elements for l1: "))
+        l1.append(x)
+    print("#################")
+    for j in range(m):
+        y=int(input("Enter elements for l2: "))
+        l2.append(y)
+    print(intersection(l1,l2))
+    
+def intersection(l1,l2):
+    return list((set(l1) & set(l2)))
+main()
+
+O/p:
+Enter elements for l1: 5                                                                                                      
+Enter elements for l1: 7                                                                                                      
+#################                                                                                                             
+Enter elements for l2: 3                                                                                                      
+Enter elements for l2: 4                                                                                                      
+Enter elements for l2: 5                                                                                                      
+Enter elements for l2: 7                                                                                                      
+[3, 5, 7] 
+    
+#################################################
+
+To create list of tuples (Using List Comprehension):
+
+def create(n):
+    return list((x,x**2) for x in range(1,n+1))   OR  return [(x,x**2) for x in range(1,n+1)]
+    
+n=int(input("Enter size : "))
+print(create(n))
+
+O/p:
+Enter size : 5                                                                                                                
+[(1, 1), (2, 4), (3, 9), (4, 16), (5, 25)] 
+###############################################
+
+Find all Numbers in a Range which are Perfect Squares and Sum of all Digits in the Number is Less than 10:
+
+n=int(input("Enter upper limit: "))
+print([x for x in range(n) if (int(x**0.5))**2 == x and sum(list(map(int,str(x)))) < 10])
+
+Explanation: sum(list(map(int,str(x))))
+
+inner most: map(int,str(x))   
+map(function to apply, iterable)
+map(int,str(x))  
+converting x(int) to string (so that we get every digit of number, as string makes things iterable )
+Now using map we r making every digit as int (again)
+Now we store digits of x as element of list using list(map(int,str(x)))
+finally sum of elements of list
+
+O/P:
+Enter upper limit: 100                                                                                                        
+[1, 4, 9, 11, 14, 16, 17, 21, 22, 25, 27, 30, 33, 34, 35, 36, 39, 41, 42, 44, 46, 47, 49, 53, 54, 55, 56, 57, 62, 64, 67, 68, 
+69, 70, 71, 74, 79, 81, 83, 84, 85, 86, 88, 90, 91, 93, 98, 99] 
+
+################################################
+
+
+
+
+
+

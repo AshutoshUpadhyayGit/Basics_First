@@ -1,0 +1,97 @@
+Exchanges 1st and last word:
+
+def exchange(word,n):
+    a=word[0]
+    b=word[1:n-1]  # prints from 1 to n-2 eg: w[1,5] will fetch w[1,2,3,4]
+    c=word[-1]
+    return(c+b+a)
+    
+
+word=input("Enter a string: ")
+n=len(word)
+print(exchange(word,n))
+
+##########################################
+Count vowels:
+
+def vowel(word):
+    count=0
+    for i in word:
+        if (i == "a" or i == "i" or i =="e" or i =="o" or i =="u"):
+            count+=1
+        else:
+            continue
+    return(count)
+    
+
+word=input("Enter a string: ")
+print("The count of vowels: ",vowel(word))
+
+m-2:
+
+inputn replace of line 20,21:
+if i in ['a','e','i','o','u']:
+            count+=1
+###########################################
+No of words and charac in string:
+
+string=input("Enter string:")
+char=0
+word=1
+if (string == ""):
+    print("Empty string")
+else:
+    for i in string:
+          char=char+1
+          if(i==' '):
+                word=word+1
+    print("Number of words in the string:")
+    print(word)
+    print("Number of characters in the string:")
+    print(char)
+###################################################
+Count no of lower case letter in string:
+
+string=input("Enter string:")
+count=0
+for i in string:
+      if(i.islower()):
+            count=count+1
+print("The number of lowercase characters is:")
+print(count)
+##############################################
+Palindrome:
+
+word=input("Enter a word: ")
+for i in range(len(word)):
+    if word[i] == word[len(word)-i-1]:
+        p = True
+    else:
+        p = False
+        break
+if(p == True):
+    print(word," is palindrome")
+else:
+    print(word," is not a palindrome")
+
+M-2: By Slicing method(Refer python_strings for explanation)
+
+string=input("Enter string:")
+if(string[ ::1]==string[::-1]):
+      print("The string is a palindrome")
+else:
+      print("The string isn't a palindrome")
+##################################################
+Use of join and input() in list comprehension:
+
+print("Enter - sep word: ")
+l=[x for x in input().split("-")]
+l.sort()
+print("-".join(l))
+
+O/p:
+Enter - sep word:                                                                                                            
+a-p-l-e                                                                                                                       
+a-e-l-p 
+
+###########################################################
