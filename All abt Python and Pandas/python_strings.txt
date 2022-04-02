@@ -1,0 +1,87 @@
+Strings:
+
+To learn from: https://www.w3schools.com/python/python_strings.asp
+
+-> Replace func: string.replace('word','by')
+-> Index Slicing: 
+Get the characters from position 2 to position 5 (not included):
+
+b = "Hello, World!"
+print(b[2:5])........5 is not included so till index 4
+
+Negative Index Slicing:
+Get the characters from position 5 to position 1, starting the count from the end of the string:
+
+b = "Hello, World!"
+print(b[-5:-2]).......-2 not included so till -3.
+
+-> Strip function:
+The strip() method removes any whitespace from the beginning or the end:
+
+a = " Hello, World! "
+print(a.strip()) # returns "Hello, World!"
+
+-> Check if the phrase "ain" is present in the following text:
+
+txt = "The rain in Spain stays mainly in the plain"
+x = "ain" in txt
+print(x)
+
+O/P: True
+
+-> String Formatfunction:
+
+The format() method takes the passed arguments, formats them, and places them in the string where the placeholders {} are:
+
+Example
+Use the format() method to insert numbers into strings:
+
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
+
+
+The format() method takes unlimited number of arguments, and are placed into the respective placeholders:
+
+Example
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want {} pieces of item {} for {} dollars."
+print(myorder.format(quantity, itemno, price))
+
+You can use index numbers {0} to be sure the arguments are placed in the correct placeholders:
+
+Example
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+print(myorder.format(quantity, itemno, price))
+
+
+
+-> Reversing a string:
+a) By slicing: string[len(str):0:-1 ] which is equivalent to string[ : :-1] meaning start with len(str) till 0 at step of -1.
+
+
+b) Use join
+This is a powerful technique that takes advantage of Python’s iterator protocol. This technique reverses a string using 
+reverse iteration with the reversed() built-in function to cycle through the elements in the string in reverse order and
+ then use .join() method to merge all of the characters (with "something") resulting from the reversed iteration into a new string.
+
+The general syntax is:
+str="Python" 
+
+eg 1 : b = "Python"
+print("/".join(b))  -----O/P: P/y/t/h/o/n
+
+eg2: 
+
+reversedstring="".join(reversed(str))
+
+O/p: nohtyP
+
+reversedstring="/".join(reversed(str))
+
+O/P: n/o/h/t/y/P
