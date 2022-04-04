@@ -1,0 +1,15 @@
+Dictionary:
+
+->d={ key:value}
+d.update is used to update a key:value to a dictionary
+
+eg: d.update({key:value})
+Note: dictionary removes duplicates entry(key:val) automatically without any error
+
+->d.keys(): we get all keys in dict d
+d.values(): get all values in d.
+
+-> To use 2 lists to form a dictionary:
+d=dict(zip(list1,list2))
+
+list1 forms keys, list2 forms values
